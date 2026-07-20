@@ -38,7 +38,7 @@ export default function CartSummary() {
 
         <div className="flex justify-between items-center mt-4 border-t pt-4">
           <p className="font-medium"  >Discount (-20%)</p>
-          <p>-${discount}</p>
+          <p>-${formatPrice(discount)}</p>
         </div>
 
         <div className="flex justify-between items-center mt-4 border-t pt-4">
