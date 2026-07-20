@@ -22,20 +22,18 @@ export default function Home() {
         //     console.log(error);
         // }
 
-        await axios.get(
-            "https://jsonfakery.com/products"
-        ).then((res) => {
-            console.log("axios response", res)
-            if (res?.data) {
-                setProducts(res?.data);
-            }
-            // aleart
-            console.log("Products not found");
+       await axios.get("https://jsonfakery.com/products").then((res) => {
+    console.log("axios response", res);
 
-        }).catch((e) => {
-            console.log(e);
-            //api fail alreat
-        })
+    if (res?.data) {
+        setProducts(res.data);
+    } else {
+        console.log("Products not found");
+    }
+
+}).catch((e) => {
+    console.log(e);
+});
 
         setIsLoading(false);
     };

@@ -1,4 +1,5 @@
 import { useCart } from "../Context/CartContext";
+import { formatPrice } from "../utils/formatPrice";
 
 export default function ProductCard({ item }) {
   const { dispatch } = useCart();
@@ -9,7 +10,7 @@ export default function ProductCard({ item }) {
       payload: item,
     });
   };
-
+console.log(item);
   return (
     <div className="flex flex-col gap-4 p-4">
       <div className="border rounded-2xl">
@@ -40,7 +41,7 @@ export default function ProductCard({ item }) {
 
           <div className="flex justify-between mb-4">
             <span className="font-medium">Price</span>
-            <span>${item?.price}</span>
+            <span>${formatPrice(item?.price)}</span>
           </div>
 
           <button

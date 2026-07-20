@@ -1,4 +1,5 @@
 import { useCart } from "../Context/CartContext";
+import { formatPrice } from "../utils/formatPrice";
 
 export default function CartSummary() {
   const { state } = useCart();
@@ -48,7 +49,7 @@ export default function CartSummary() {
 
       <div className="flex justify-between items-center mt-4 border-t pt-4">
         <p className="font-medium">Total</p>
-          <p className="font-bold">${total}</p>
+          <p className="font-bold">${formatPrice(total)}</p>
         </div>
 
       <button className="flex gap-2 bg-black text-white py-2 px-4 rounded-md hover:bg-gray-800">
